@@ -1,0 +1,142 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #1a1a1a;
+  background-color: #f0f2f5; 
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+#root {
+  max-width: 800px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* --- Contenedor Principal del Chat --- */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 90vh; /* Altura para simular una ventana de chat */
+  max-height: 700px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* --- Área de Mensajes --- */
+.message-area {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Bocadillo de Chat */
+.message-bubble {
+  max-width: 75%;
+  padding: 10px 15px;
+  border-radius: 20px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+/* Usuario (Derecha) */
+.user-message {
+  align-self: flex-end;
+  background-color: #007bff;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+/* Asistente (Izquierda) */
+.assistant-message {
+  align-self: flex-start;
+  background-color: #e9ecef;
+  color: #333;
+  border-bottom-left-radius: 4px;
+}
+
+/* Indicador de Carga */
+.loading-indicator {
+  align-self: flex-start;
+  color: #6c757d;
+  font-style: italic;
+  padding: 10px 15px;
+}
+
+/* --- Formulario de Entrada --- */
+.input-form {
+  display: flex;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+}
+
+.input-form input[type="text"] {
+  flex-grow: 1;
+  padding: 10px 15px;
+  border: 1px solid #ced4da;
+  border-radius: 25px;
+  margin-right: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-form input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+.input-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background-color: #28a745; /* Color verde para Enviar */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+.input-form button:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+.input-form button:disabled {
+  background-color: #90c69d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Mensaje de Error */
+.error-message {
+  padding: 10px;
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-align: center;
+}
